@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  web:
+  backend:
     build:
       context: .
       dockerfile: DockerFile
@@ -10,4 +10,19 @@ services:
     - .:/code
     ports:
       - "8000:8000"
+  db:
+    image: "postgres:latest"
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=user_dev
+      - POSTGRES_PASSWORD=user_dev_pass
+      - POSTGRES_DB=Dev
+    ports:
+      - "5432:5432"
+    depends_on:
+      - backend
 
+volumes:
+  postgres_data:

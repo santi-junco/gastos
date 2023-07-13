@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from .apiviews import ObtainToken
+from .apiviews import ObtainToken, TestApi
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', TestApi.as_view()),
     path('api/v1/login/', ObtainToken.as_view()),
     path('api/v1/users/', include('apps.usuarios.urls')),
     path('api/v1/movimientos/', include('apps.movimientos.urls')),
