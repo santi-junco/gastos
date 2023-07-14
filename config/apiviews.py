@@ -34,6 +34,6 @@ class TestApi(APIView):
 
     def get(self, request, format=None):
         content = {
-            'mensaje': 'Bienvenido/a a Gastos. API Funcionando ok!'
+            'mensaje': 'Bienvenido/a a Gastos. API Funcionando ok! Cambio hecho para probar el deploy automatico'
         }
         return Response(content)
