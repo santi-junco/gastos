@@ -1,0 +1,20 @@
+name: Actualizar contenedor
+
+on:
+  push:
+    banches:
+      - development
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del repositorio
+      uses: actions/checkout
+    
+    - name: Iniciar contenedor Docker
+      run: |
+        docker-compose down
+        docker-compose build
+        docker-compose up -d
