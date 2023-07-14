@@ -10,7 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Iniciar contenedor Docker
+    - name: Traer cambios nuevos
+      run: git pull origin development
+    
+    - name: Reiniciar contenedor Docker
       run: |
         sudo docker-compose.yml down
         sudo docker-compose.yml build
