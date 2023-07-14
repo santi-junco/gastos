@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cd /gastos
-
 echo "Repository pull"
 sudo git pull origin development
 
