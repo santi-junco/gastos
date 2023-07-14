@@ -1,0 +1,14 @@
+# name: Actualizar contenedor
+
+# on:
+#   push:
+#     banches:
+#       - development
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - name: Ejecutar script de actualizacion
+#       run: actualizar_server.bash
