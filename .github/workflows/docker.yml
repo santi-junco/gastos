@@ -10,9 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout del repositorio
-      uses: actions/checkout
-    
     - name: Iniciar contenedor Docker
       run: |
         sudo docker-compose down
